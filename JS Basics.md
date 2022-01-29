@@ -198,3 +198,104 @@ val = str.replace('my' , 'Your'); // Hola to Your friends
 val = str.includes('to'); //true
 val = str.includes('too'); //false
 ```
+
+Template Literals
+
+```js
+// Es6 Template Strings
+var firstName = 'Faysal';
+var lastName = 'Mahmud';
+let age = 20 ;
+let html ;
+
+html =`
+    <ul>
+     <li>First : $(firstName)</li>
+     <li>Last : $(lastName)</li>
+     <li>Age : $(age)</li>
+     <li>$(age > 19 ? 'Not Teen' : 'Teen')</li>
+    </ul`;
+document.body.innerHTML = html ;
+```
+
+Array
+
+```js
+//Array
+const numbers = [1,2,3,4,5];
+const numbers2 = [6,7,8];
+const fruit = ['am','jam'.'kathal']
+let val;
+//length
+val = numbers.length; // 5
+// check if is array
+val = Array.isArray(numbers); //true
+// Get single value
+val = numbers[2]; // 3
+// edit or insert into array
+numbers[2] = 5 ;
+// Find index
+val = numbers.indexOf(5); //4
+
+// Mutating array
+
+// Add last
+numbers.push(6);
+// remove last
+numbers.pop();
+// Add first
+numbers.unshift(12);
+// remove fist
+numbers.shift();
+// Splice values
+numbers.splice(1,3); // splice(start, remove after that)
+
+// COncatenate array
+val = numbers.concat(numbers2); // add two array
+// SOrting
+val = fruit.sort(); //workd for string
+
+
+// Number sorting
+// Assending 
+val = numbers.sort(function(x,y){
+    return x - y ;
+});
+// Descending 
+val = numbers.sort(function(x,y){
+    return y - x ;
+});
+
+// Find
+```
+
+Object Literals
+
+```js
+const person = {
+    first : 'Faysal',
+    last : 'Mahmud'
+}
+
+let val ;
+// Get full
+val = person ;
+
+//Get specific
+val = person.first ;
+
+
+// Array
+```
+
+Dates & Times
+
+```js
+let val ;
+
+const today = new Date();
+
+let birthday = new Date('3-14-2001 10:25:00');
+birthday = new Date('March 14 2001');
+birthday = new Date('3/14/2001');
+```
