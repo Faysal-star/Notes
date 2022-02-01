@@ -210,11 +210,11 @@ let html ;
 
 html =`
     <ul>
-     <li>First : $(firstName)</li>
-     <li>Last : $(lastName)</li>
-     <li>Age : $(age)</li>
-     <li>$(age > 19 ? 'Not Teen' : 'Teen')</li>
-    </ul`;
+     <li>First : ${firstName}</li>
+     <li>Last : ${lastName}</li>
+     <li>Age : ${age}</li>
+     <li>${age > 19 ? 'Not Teen' : 'Teen'}</li>
+    </ul>`;
 document.body.innerHTML = html ;
 ```
 
@@ -235,7 +235,7 @@ val = numbers[2]; // 3
 // edit or insert into array
 numbers[2] = 5 ;
 // Find index
-val = numbers.indexOf(5); //4
+val = fruit.indexOf('jam'); //1
 
 // Mutating array
 
@@ -243,6 +243,7 @@ val = numbers.indexOf(5); //4
 numbers.push(6);
 // remove last
 numbers.pop();
+let poped_item = numbers.pop(); //5
 // Add first
 numbers.unshift(12);
 // remove fist
@@ -255,6 +256,9 @@ val = numbers.concat(numbers2); // add two array
 // SOrting
 val = fruit.sort(); //workd for string
 
+//check if is in array 
+if(fruit.indexOf('peyara') == -1){ console.log('peyara nai ') ;}
+else if(fruit.indexOf('peyara') != -1){console.log('peyara ache') ;}
 
 // Number sorting
 // Assending 
@@ -274,7 +278,8 @@ Object Literals
 ```js
 const person = {
     first : 'Faysal',
-    last : 'Mahmud'
+    last : 'Mahmud',
+    age : 19,
 }
 
 let val ;
@@ -284,6 +289,12 @@ val = person ;
 //Get specific
 val = person.first ;
 
+//change value
+person.age = 20 ;
+person['age'] = 21;
+
+val = person.age ;
+person[val] = 22 ;
 
 // Array
 ```
@@ -298,4 +309,204 @@ const today = new Date();
 let birthday = new Date('3-14-2001 10:25:00');
 birthday = new Date('March 14 2001');
 birthday = new Date('3/14/2001');
+
+
+val = today.getMonth();
+val = today.getDate();
+val = today.getDay();
+val = today.getFullYear();
+val = today.getHours();
+val = today.getMinutes();
+val = today.getSeconds();
+val = today.getMilliseconds();
+val = today.getTime();
+
+birthday.setMonth(1);
+birthday.setDate(15);
+birthday.setFullYear(2002);
+```
+
+If - Else
+
+```js
+// Condition
+const color = 'red' ;
+if(color == 'red'){
+    consol.log('red');
+}
+else if(color == 'green'){
+    console.log('green');
+}
+else{
+    console.log('no color');
+}
+```
+
+Switch
+
+```js
+const color = 'red';
+switch(color){
+    case 'red':
+        console.log('color is red');
+        break;
+    case 'blue':
+        console.log('Color is blue');
+        break;
+    default :
+        console.log('Muri');
+        break;
+}
+```
+
+Function
+
+```js
+function greet(name){
+    return 'hello' + name;
+}
+console.log(greet('Faysal'));
+
+// Function Expressions
+const square = function(x){
+    return x*x;
+};
+console.log(square(9));
+
+// Immidiately Invokable Dunction Espressions - IIFes
+(function(){
+    console.log('Hola');
+})();
+
+
+(function(name){
+    console.log('Hola' + name );
+})('Faysal'); /* Hola Faysal */
+
+
+// Property Mehod
+
+//in object
+const todo ={
+    add: function(){
+    console.log('add todo');
+    },
+    edit : function(id){
+    console.log("Edit $(id)");
+    }
+}
+//adding to object
+todo.delete = function(){
+    console.log('Delete');
+}
+//calling values
+todo.add();
+todo.edit(22);
+todo.delete();
+```
+
+Loop
+
+```js
+//for loop
+
+for(let i = 0 ; i < 10 ; i++){
+
+    if(i == 2){
+        console.log('2 is my fav');
+        continue;
+    }
+    if(i == 5){
+    break;
+    }
+    console.log(i);
+
+}
+
+// While 
+let i = 0;
+while(i < 10){
+    console.log(i);
+    i++;
+}
+
+// Do While
+let i = 0 ;
+
+do{
+    console.log(i);
+    i++;
+}
+while(i < 10); 
+
+// forEach
+const fruits = ['am','jam'.'kathal'];
+
+fruits.forEach(function(fruit){
+    console.log(fruit);
+});
+
+//Map
+const users = [
+    {id : 1 , name:'a'},
+    {id : 2 , name:'b'},
+    {id : 3 , name:'c'},
+];
+
+const ids = users.map(function(user){
+    return user.id;
+});
+console.log(ids);
+
+// For in loop 
+const user = {
+  firstName: 'John', 
+  lastName: 'Doe',
+  age: 40
+}
+
+for(let x in user){
+  console.log(`${x} : ${user[x]}`);
+}
+```
+
+ Alerts 
+
+```js
+// Alert
+alert('hello');
+
+// Prompt
+const input = prompt();
+alert(input);
+
+// Confirm
+if(confirm('Are you sure')){
+    console.log('Yes');
+}
+else{
+    console.log('No');
+}
+
+let val;
+// Outer height and width
+val = window.outerHeight;
+val = window.outerWidth;
+// Inner height and width
+val = window.innerHeight;
+val = window.innerWidth;
+
+// Scroll Points
+val = window.scrollY;
+val = window.scrollX;
+
+// Location
+val = window.location;
+
+
+// History Object
+window.history.go(-1);
+
+// Navigator
+val = window.navigator;
 ```
